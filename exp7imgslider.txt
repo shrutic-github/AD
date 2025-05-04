@@ -1,0 +1,233 @@
+activity_main.xml:  
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"     
+xmlns:app="http://schemas.android.com/apk/res-auto"     
+android:layout_width="match_parent"     
+android:layout_height="match_parent"  
+    android:background="#F0F0F0">  
+  
+    <ImageButton         android:id="@+id/btnPrevious"         
+android:layout_width="50dp"         
+android:layout_height="50dp"         
+android:src="@drawable/ic_arrow_left"         
+android:background="@android:color/transparent"  
+        android:layout_centerVertical="true"         
+android:layout_alignParentStart="true"  
+        android:layout_marginStart="16dp"/>  
+  
+    <androidx.viewpager2.widget.ViewPager2         
+android:id="@+id/viewPager"         
+android:layout_width="match_parent"         
+android:layout_height="500dp"         
+android:layout_toStartOf="@id/btnNext"         
+android:layout_toEndOf="@id/btnPrevious"         
+android:layout_centerInParent="true"  
+        android:layout_margin="16dp"/>  
+  
+    <ImageButton         android:id="@+id/btnNext"         
+android:layout_width="50dp"         
+android:layout_height="50dp"         
+android:src="@drawable/ic_arrow_right"         
+android:background="@android:color/transparent"  
+        android:layout_centerVertical="true"         
+android:layout_alignParentEnd="true"  
+        android:layout_marginEnd="16dp"/>  
+  
+    <com.google.android.material.tabs.TabLayout         
+android:id="@+id/tabIndicator"         
+android:layout_width="117dp"         android:layout_height="23dp"         
+android:layout_below="@id/viewPager"         
+android:layout_centerHorizontal="true"         
+app:tabBackground="@drawable/tab_selector"  
+        app:tabGravity="center"         
+app:tabIndicatorHeight="0dp"         
+app:tabPaddingEnd="8dp"  
+        app:tabPaddingStart="8dp" />  
+  
+</RelativeLayout>  
+item_image_slider.xml:  
+<?xml version="1.0" encoding="utf-8"?>  
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"     
+xmlns:app="http://schemas.android.com/apk/res-auto"     android:layout_width="match_parent"     
+android:layout_height="match_parent"     android:layout_margin="8dp"     
+app:cardCornerRadius="12dp"  
+    app:cardElevation="8dp">  
+  
+    <ImageView         
+android:id="@+id/imageSlider"         
+android:layout_width="match_parent"         
+android:layout_height="match_parent"  
+        android:scaleType="centerCrop"/>  
+  
+</androidx.cardview.widget.CardView>
+tab_selector.xml:  
+<?xml version="1.0" encoding="utf-8"?>  
+<selector xmlns:android="http://schemas.android.com/apk/res/android">  
+    <item android:state_selected="true" android:drawable="@drawable/tab_selected"/>  
+    <item android:drawable="@drawable/tab_unselected"/> </selector>  
+  
+tab_selected.xml:  
+<?xml version="1.0" encoding="utf-8"?>  
+<shape xmlns:android="http://schemas.android.com/apk/res/android"     
+android:shape="oval">  
+    <solid android:color="#707070"/>  
+    <size  
+        android:width="0.1dp"         
+android:height="0.1dp"/>  
+</shape>  
+tab_unselected.xml:  
+<?xml version="1.0" encoding="utf-8"?>  
+<shape xmlns:android="http://schemas.android.com/apk/res/android"     
+android:shape="oval"> 
+ <solid android:color="#A0A0A0"/>  
+    <size  
+        android:width="0.1dp"         
+android:height="0.1dp"/>  
+</shape>  
+ic_arrow_left.xml:  
+<vector xmlns:android="http://schemas.android.com/apk/res/android"     
+android:width="24dp"     android:height="24dp"     
+android:viewportWidth="24"     android:viewportHeight="24">  
+    <path  
+        android:fillColor="#3F51B5"  
+        android:pathData="M15.41,16.59L10.83,12l4.58,-4.59L14,6l-6,6 6,6 1.41,-1.41z"/> </vector>  
+  
+ic_arrow_right.xml:  
+<vector xmlns:android="http://schemas.android.com/apk/res/android"     
+android:width="24dp"     android:height="24dp"     
+android:viewportWidth="24"     android:viewportHeight="24">  
+    <path  
+        android:fillColor="#3F51B5"  
+        android:pathData="M8.59,16.59L13.17,12 8.59,7.41 10,6l6,6 -6,6 -1.41,-1.41z"/> </vector>  
+AndroidManifest.xml:  
+<?xml version="1.0" encoding="utf-8"?>  
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"     
+package="com.example.expt07_42113">  
+  
+    <application         android:allowBackup="true"         
+android:icon="@mipmap/ic_launcher"         
+android:label="@string/app_name"         
+android:roundIcon="@mipmap/ic_launcher_round"         
+android:supportsRtl="true"  
+        android:theme="@style/Theme.ImageSliderApp">  
+  
+        <activity  
+ android:name=".MainActivity"             
+android:exported="true">  
+            <intent-filter>  
+                <action android:name="android.intent.action.MAIN" />  
+                <category android:name="android.intent.category.LAUNCHER" />  
+            </intent-filter>  
+        </activity>  
+    </application>  
+</manifest> 
+MainActivity.java:  
+  
+package com.example.expt07_42113;  
+  
+import android.os.Bundle; import android.view.View; import 
+android.widget.ImageButton; import 
+androidx.appcompat.app.AppCompatActivity; import 
+androidx.viewpager2.widget.ViewPager2; import 
+com.google.android.material.tabs.TabLayout; import 
+com.google.android.material.tabs.TabLayoutMediator;  
+  
+public class MainActivity extends AppCompatActivity {  
+  
+    @Override  
+    protected void onCreate(Bundle savedInstanceState) {         
+super.onCreate(savedInstanceState);  
+        setContentView(R.layout.activity_main);  
+  
+  
+  
+  
+  
+  
+  
+        ViewPager2 viewPager = findViewById(R.id.viewPager);  
+        ImageButton btnPrevious = findViewById(R.id.btnPrevious);  
+        ImageButton btnNext = findViewById(R.id.btnNext);  
+        TabLayout tabIndicator = findViewById(R.id.tabIndicator);  
+  
+        int[] images = {                 
+R.drawable.image1,                 
+R.drawable.image2,                 
+R.drawable.image3,  
+                R.drawable.image4,  
+                R.drawable.image5  
+        };  
+  
+        ImageSliderAdapter adapter = new ImageSliderAdapter(images);  
+        viewPager.setAdapter(adapter); 
+    // Setup tab indicator  
+        new TabLayoutMediator(tabIndicator, viewPager,  
+                (tab, position) -> tab.setIcon(R.drawable.tab_selector)  
+        ).attach();  
+  
+        // Navigation buttons         
+btnPrevious.setOnClickListener(v -> {             int 
+currentItem = viewPager.getCurrentItem();             if 
+(currentItem > 0) {  
+                viewPager.setCurrentItem(currentItem - 1, true);  
+            }  
+        });  
+        btnNext.setOnClickListener(v -> {             int 
+currentItem = viewPager.getCurrentItem();             if 
+(currentItem < images.length - 1) {  
+                viewPager.setCurrentItem(currentItem + 1, true);  
+            }  
+        });  
+    }  
+}  
+ImageSliderAdapter.java:  
+  
+package com.example.expt07_42113;  
+  
+import android.view.LayoutInflater; 
+import android.view.View; import 
+android.view.ViewGroup; import 
+android.widget.ImageView; import 
+androidx.annotation.NonNull;  
+import androidx.recyclerview.widget.RecyclerView;  
+  
+public class ImageSliderAdapter extends  
+RecyclerView.Adapter<ImageSliderAdapter.ImageSliderViewHolder> {     
+private final int[] images;  
+  
+  
+  
+  
+  
+  
+  
+    public ImageSliderAdapter(int[] images) {  
+        this.images = images;  
+    }  
+  
+    @NonNull     
+@Override  
+    public ImageSliderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {  
+        View view = LayoutInflater.from(parent.getContext())                 
+.inflate(R.layout.item_image_slider, parent, false);  
+        return new ImageSliderViewHolder(view);  
+    } 
+  @Override  
+    public void onBindViewHolder(@NonNull ImageSliderViewHolder holder, int position) {         
+holder.imageView.setImageResource(images[position]);  
+    }  
+  
+    @Override     public int 
+getItemCount() {  
+        return images.length;  
+    }  
+  
+    static class ImageSliderViewHolder extends RecyclerView.ViewHolder {         
+ImageView imageView;  
+  
+        ImageSliderViewHolder(@NonNull View itemView) {             
+super(itemView);  
+            imageView = itemView.findViewById(R.id.imageSlider);  
+        }     
+}  
+} 

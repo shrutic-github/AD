@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        android:padding="20dp">
+
+        <androidx.cardview.widget.CardView
+            style="@style/CustomCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    style="@style/HeaderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Student Registration"
+                    android:textAlignment="center" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/CustomTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/nameInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Full Name" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    style="@style/LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Subject" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/CustomTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxBackgroundMode="outline">
+
+                    <Spinner
+                        android:id="@+id/subjectSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    style="@style/LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender" />
+
+                <RadioGroup
+                    android:id="@+id/genderRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/maleRadio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="Male"
+                        android:textColor="@color/text_primary" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/femaleRadio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Female"
+                        android:textColor="@color/text_primary" />
+                </RadioGroup>
+
+                <TextView
+                    style="@style/LabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Qualifications" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/graduateCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Graduate"
+                    android:textColor="@color/text_primary" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/postGraduateCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Post Graduate"
+                    android:textColor="@color/text_primary" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/phdCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:text="PhD"
+                    android:textColor="@color/text_primary" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/submitButton"
+                    style="@style/CustomButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Submit Registration" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>
+activity_show.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <androidx.cardview.widget.CardView
+        style="@style/CustomCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="90dp"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/HeaderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Registration Details"
+                android:textAlignment="center" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/primary_variant"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        style="@style/LabelText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name" />
+
+                    <TextView
+                        android:id="@+id/nameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        style="@style/LabelText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Subject" />
+
+                    <TextView
+                        android:id="@+id/subjectText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        style="@style/LabelText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gender" />
+
+                    <TextView
+                        android:id="@+id/genderText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        style="@style/LabelText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Qualifications" />
+
+                    <TextView
+                        android:id="@+id/qualificationsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/backButton"
+                style="@style/CustomButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back to Registration" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</ScrollView>
+MainActivity.java:  
+package com.example.expt04_42441;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+    private EditText nameInput;
+    private Spinner subjectSpinner;
+    private RadioGroup genderRadioGroup;
+    private CheckBox graduateCheck, postGraduateCheck, phdCheck;
+    private Button submitButton;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Initialize views
+        nameInput = findViewById(R.id.nameInput);
+        subjectSpinner = findViewById(R.id.subjectSpinner);
+        genderRadioGroup = findViewById(R.id.genderRadioGroup);
+        graduateCheck = findViewById(R.id.graduateCheck);
+        postGraduateCheck = findViewById(R.id.postGraduateCheck);
+        phdCheck = findViewById(R.id.phdCheck);
+        submitButton = findViewById(R.id.submitButton);
+
+        // Set up spinner
+        String[] subjects = {"Computer Science", "Mathematics", "Physics", "Chemistry", "Biology"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_dropdown_item, subjects);
+        subjectSpinner.setAdapter(adapter);
+
+        submitButton.setOnClickListener(v -> {
+            if (validateForm()) {
+                saveData();
+                startShowActivity();
+            }
+        });
+    }
+
+    private boolean validateForm() {
+        if (nameInput.getText().toString().trim().isEmpty()) {
+            Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (genderRadioGroup.getCheckedRadioButtonId() == -1) {
+            Toast.makeText(this, "Please select your gender", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
+    }
+
+    private void saveData() {
+        SharedPreferences prefs = getSharedPreferences("RegistrationData", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        // Save name
+        editor.putString("name", nameInput.getText().toString().trim());
+
+        // Save subject
+        editor.putString("subject", subjectSpinner.getSelectedItem().toString());
+
+        // Save gender
+        String gender = genderRadioGroup.getCheckedRadioButtonId() == R.id.maleRadio ? "Male" : "Female";
+        editor.putString("gender", gender);
+
+        // Save qualifications
+        ArrayList<String> qualifications = new ArrayList<>();
+        if (graduateCheck.isChecked()) qualifications.add("Graduate");
+        if (postGraduateCheck.isChecked()) qualifications.add("Post Graduate");
+        if (phdCheck.isChecked()) qualifications.add("PhD");
+        editor.putString("qualifications", String.join(", ", qualifications));
+
+        editor.apply();
+    }
+
+    private void startShowActivity() {
+        Intent intent = new Intent(this, ShowActivity.class);
+        startActivity(intent);
+    }
+}
+Show activity.java
+package com.example.expt04_42441;
+
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ShowActivity extends AppCompatActivity {
+    private TextView nameText, subjectText, genderText, qualificationsText;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_show);
+
+        // Initialize views
+        nameText = findViewById(R.id.nameText);
+        subjectText = findViewById(R.id.subjectText);
+        genderText = findViewById(R.id.genderText);
+        qualificationsText = findViewById(R.id.qualificationsText);
+
+        // Load and display data
+        loadData();
+    }
+
+    private void loadData() {
+        SharedPreferences prefs = getSharedPreferences("RegistrationData", MODE_PRIVATE);
+
+        nameText.setText(prefs.getString("name", ""));
+        subjectText.setText(prefs.getString("subject", ""));
+        genderText.setText(prefs.getString("gender", ""));
+        qualificationsText.setText(prefs.getString("qualifications", "None"));
+    }
+}

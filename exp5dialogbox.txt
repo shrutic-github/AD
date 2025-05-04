@@ -1,0 +1,340 @@
+activity_main.xml: 
+<?xml version="1.0" encoding="utf-8"?> 
+<androidx.coordinatorlayout.widget.CoordinatorLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent"> 
+ 
+    <com.google.android.material.appbar.AppBarLayout 
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content"> 
+ 
+        <androidx.appcompat.widget.Toolbar 
+            android:id="@+id/toolbar" 
+            android:layout_width="match_parent" 
+            android:layout_height="?attr/actionBarSize" 
+            android:background="?attr/colorPrimary" 
+            app:title="Dialog &amp; Menu Demo" 
+            android:layout_marginTop="30dp" 
+            app:titleTextColor="@android:color/white"/> 
+ 
+    </com.google.android.material.appbar.AppBarLayout> 
+ 
+    <androidx.core.widget.NestedScrollView 
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent" 
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+ <LinearLayout 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" 
+            android:orientation="vertical" 
+            android:padding="16dp"> 
+ 
+            <com.google.android.material.card.MaterialCardView 
+                android:layout_width="match_parent" 
+                android:layout_height="wrap_content" 
+                android:layout_marginBottom="16dp" 
+                app:cardElevation="4dp" 
+                app:cardCornerRadius="8dp"> 
+ 
+                <LinearLayout 
+                    android:layout_width="match_parent" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical" 
+                    android:padding="16dp"> 
+ 
+                    <TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="Dialog Boxes" 
+                        android:textAppearance="?attr/textAppearanceHeadline6" 
+                        android:layout_marginBottom="16dp"/> 
+ 
+                    <com.google.android.material.button.MaterialButton 
+                        android:id="@+id/btnSimpleDialog" 
+                        android:layout_width="match_parent" 
+                        android:layout_height="wrap_content" 
+                        android:text="Show Simple Dialog"/> 
+ 
+                    <com.google.android.material.button.MaterialButton 
+                        android:id="@+id/btnCustomDialog" 
+                        android:layout_width="match_parent" 
+                        android:layout_height="wrap_content" 
+                        android:text="Show Custom Dialog"/> 
+ 
+                </LinearLayout> 
+ 
+            </com.google.android.material.card.MaterialCardView> 
+ 
+            <com.google.android.material.card.MaterialCardView 
+                android:layout_width="match_parent" 
+                android:layout_height="wrap_content" 
+                android:layout_marginBottom="16dp" 
+                app:cardElevation="4dp" 
+                app:cardCornerRadius="8dp"> 
+ 
+                <LinearLayout 
+                    android:layout_width="match_parent" 
+                    android:layout_height="wrap_content" 
+                    android:orientation="vertical" 
+                    android:padding="16dp"> 
+<TextView 
+                        android:layout_width="wrap_content" 
+                        android:layout_height="wrap_content" 
+                        android:text="Long Press Items" 
+                        android:textAppearance="?attr/textAppearanceHeadline6" 
+                        android:layout_marginBottom="16dp"/> 
+ 
+                    <ListView 
+                        android:id="@+id/listView" 
+                        android:layout_width="match_parent" 
+                        android:layout_height="200dp"/> 
+ 
+                </LinearLayout> 
+ 
+            </com.google.android.material.card.MaterialCardView> 
+ 
+        </LinearLayout> 
+ 
+    </androidx.core.widget.NestedScrollView> 
+ 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton 
+        android:id="@+id/fab" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_gravity="bottom|end" 
+        android:layout_margin="16dp" 
+        android:src="@android:drawable/ic_dialog_info"/> 
+ 
+</androidx.coordinatorlayout.widget.CoordinatorLayout> 
+ 
+dialog_custom.xml: 
+<?xml version="1.0" encoding="utf-8"?> 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent" 
+    android:layout_height="wrap_content" 
+    android:orientation="vertical" 
+    android:padding="16dp"> 
+ 
+    <com.google.android.material.textfield.TextInputLayout 
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:hint="Enter your name"> 
+ 
+        <com.google.android.material.textfield.TextInputEditText 
+            android:id="@+id/editTextName" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" 
+            android:inputType="textPersonName"/> 
+ 
+    </com.google.android.material.textfield.TextInputLayout> 
+ 
+    <com.google.android.material.textfield.TextInputLayout 
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:hint="Enter your email" 
+        android:layout_marginTop="8dp">
+  <com.google.android.material.textfield.TextInputEditText 
+            android:id="@+id/editTextEmail" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" 
+            android:inputType="textEmailAddress"/> 
+ 
+    </com.google.android.material.textfield.TextInputLayout> 
+ 
+</LinearLayout> 
+ 
+ 
+menu/contect_menu.xml: 
+<?xml version="1.0" encoding="utf-8"?> 
+<menu xmlns:android="http://schemas.android.com/apk/res/android"> 
+    <item 
+        android:id="@+id/action_edit" 
+        android:title="Edit"/> 
+    <item 
+        android:id="@+id/action_delete" 
+        android:title="Delete"/> 
+    <item 
+        android:id="@+id/action_share" 
+        android:title="Share"/> 
+</menu> 
+ 
+menu/main_menu.xml: 
+<?xml version="1.0" encoding="utf-8"?> 
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto"> 
+ 
+    <item 
+        android:id="@+id/action_settings" 
+        android:title="Settings" 
+        android:icon="@android:drawable/ic_menu_manage" 
+        app:showAsAction="never"/> 
+ 
+    <item 
+        android:id="@+id/action_search" 
+        android:title="Search" 
+        android:icon="@android:drawable/ic_menu_search" 
+        app:showAsAction="ifRoom"/> 
+ 
+    <item 
+        android:id="@+id/action_about" 
+        android:title="About" 
+        app:showAsAction="never"/> 
+</menu> 
+AndroidManifest.xml: 
+<?xml version="1.0" encoding="utf-8"?> 
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
+    package="com.example.expt05_42113"> 
+ 
+    <application 
+        android:allowBackup="true" 
+        android:icon="@mipmap/ic_launcher" 
+        android:label="@string/app_name" 
+        android:roundIcon="@mipmap/ic_launcher_round" 
+        android:supportsRtl="true" 
+        android:theme="@style/Theme.DialogMenus"> 
+ 
+        <activity 
+            android:name=".MainActivity" 
+            android:exported="true"> 
+            <intent-filter> 
+                <action android:name="android.intent.action.MAIN" /> 
+                <category android:name="android.intent.category.LAUNCHER" /> 
+            </intent-filter> 
+        </activity> 
+    </application> 
+</manifest> 
+ 
+ManiActivity.java: 
+package com.example.expt05_42113; 
+ 
+import android.os.Bundle; 
+import android.view.ContextMenu; 
+import android.view.Menu; 
+import android.view.MenuItem; 
+import android.view.View; 
+import android.widget.ArrayAdapter; 
+import android.widget.ListView; 
+import android.widget.Toast; 
+ 
+import androidx.appcompat.app.AlertDialog; 
+import androidx.appcompat.app.AppCompatActivity; 
+import androidx.appcompat.widget.Toolbar; 
+ 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder; 
+import com.google.android.material.floatingactionbutton.FloatingActionButton; 
+import com.google.android.material.snackbar.Snackbar; 
+ 
+import java.util.Arrays; 
+import java.util.List; 
+public class MainActivity extends AppCompatActivity { 
+ 
+    private ListView listView; 
+    private List<String> items = Arrays.asList( 
+            "Item 1", "Item 2", "Item 3", "Item 4" 
+    ); 
+ 
+    @Override 
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main); 
+ 
+        // Setup toolbar 
+        Toolbar toolbar = findViewById(R.id.toolbar); 
+        setSupportActionBar(toolbar); 
+ 
+        // Initialize views 
+        listView = findViewById(R.id.listView); 
+        FloatingActionButton fab = findViewById(R.id.fab); 
+ 
+        // Setup ListView 
+        ArrayAdapter<String> adapter = new ArrayAdapter<>( 
+                this, 
+                android.R.layout.simple_list_item_1, 
+                items 
+        ); 
+        listView.setAdapter(adapter); 
+        registerForContextMenu(listView); 
+ 
+        // Setup click listeners 
+        findViewById(R.id.btnSimpleDialog).setOnClickListener(v -> showSimpleDialog()); 
+        findViewById(R.id.btnCustomDialog).setOnClickListener(v -> showCustomDialog()); 
+ 
+        fab.setOnClickListener(v -> { 
+            Snackbar.make(v, "This is a Snackbar message", Snackbar.LENGTH_LONG) 
+                    .setAction("Action", null) 
+                    .show(); 
+        }); 
+    } 
+ 
+    private void showSimpleDialog() { 
+        new MaterialAlertDialogBuilder(this) 
+                .setTitle("Simple Dialog") 
+                .setMessage("This is a simple dialog message") 
+                .setPositiveButton("OK", (dialog, which) -> { 
+                    Toast.makeText(this, "OK clicked", Toast.LENGTH_SHORT).show(); 
+                }) 
+                .setNegativeButton("Cancel", null) 
+                .show(); 
+    } 
+ 
+    private void showCustomDialog() { 
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_custom, null);
+  new MaterialAlertDialogBuilder(this) 
+                .setTitle("Custom Dialog") 
+                .setView(dialogView) 
+                .setPositiveButton("Submit", (dialog, which) -> { 
+                    Toast.makeText(this, "Form submitted", Toast.LENGTH_SHORT).show(); 
+                }) 
+                .setNegativeButton("Cancel", null) 
+                .show(); 
+    } 
+ 
+    @Override 
+    public boolean onCreateOptionsMenu(Menu menu) { 
+        getMenuInflater().inflate(R.menu.main_menu, menu); 
+        return true; 
+    } 
+ 
+    @Override 
+    public boolean onOptionsItemSelected(MenuItem item) { 
+        int id = item.getItemId(); 
+ 
+        if (id == R.id.action_settings) { 
+            Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show(); 
+            return true; 
+        } else if (id == R.id.action_search) { 
+            Toast.makeText(this, "Search selected", Toast.LENGTH_SHORT).show(); 
+            return true; 
+        } else if (id == R.id.action_about) { 
+            Toast.makeText(this, "About selected", Toast.LENGTH_SHORT).show(); 
+            return true; 
+        } 
+        return super.onOptionsItemSelected(item); 
+    } 
+ 
+    @Override 
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo 
+menuInfo) { 
+        super.onCreateContextMenu(menu, v, menuInfo); 
+        getMenuInflater().inflate(R.menu.context_menu, menu); 
+    } 
+ 
+    @Override 
+    public boolean onContextItemSelected(MenuItem item) { 
+        int id = item.getItemId(); 
+ 
+        if (id == R.id.action_edit) { 
+            Toast.makeText(this, "Edit selected", Toast.LENGTH_SHORT).show(); 
+            return true; 
+        } else if (id == R.id.action_delete) { 
+            Toast.makeText(this, "Delete selected", Toast.LENGTH_SHORT).show(); 
+            return true; 
+        } else if (id == R.id.action_share) { 
+            Toast.makeText(this, "Share selected", Toast.LENGTH_SHORT).show(); 
+            return true; 
+        } 
+        return super.onContextItemSelected(item); 
+    } 
+}
